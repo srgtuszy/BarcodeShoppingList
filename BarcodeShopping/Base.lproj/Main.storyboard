@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="-383" y="495"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="igN-7z-6xj">
             <objects>
-                <viewController id="kM1-c0-UfF" sceneMemberID="viewController">
+                <viewController id="kM1-c0-UfF" customClass="MainViewController" customModule="BarcodeShopping" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LoE-40-H0A"/>
                         <viewControllerLayoutGuide type="bottom" id="cZD-Wo-g1g"/>
@@ -31,9 +31,20 @@
                     <view key="view" contentMode="scaleToFill" id="MNh-hP-miS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-Lz-nMl">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="mWk-5a-SiQ"/>
+                    <navigationItem key="navigationItem" id="mWk-5a-SiQ">
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="2fB-hg-BH0"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="SE5-Lz-nMl" id="ZBo-c1-cLr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vib-zy-mGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

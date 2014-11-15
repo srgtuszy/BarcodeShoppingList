@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A251FA1A175B5F0091816F /* AppDelegate.swift */; };
-		42A251FD1A175B5F0091816F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A251FC1A175B5F0091816F /* ViewController.swift */; };
 		42A252001A175B5F0091816F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A251FE1A175B5F0091816F /* Main.storyboard */; };
 		42A252021A175B5F0091816F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A252011A175B5F0091816F /* Images.xcassets */; };
 		42A252051A175B5F0091816F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42A252031A175B5F0091816F /* LaunchScreen.xib */; };
@@ -24,6 +23,8 @@
 		42A2525F1A175DDD0091816F /* BarcodeShoppingKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252471A175DDD0091816F /* BarcodeShoppingKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42A252671A175DFE0091816F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252291A175D0C0091816F /* Alamofire.framework */; };
 		42A252681A175E0D0091816F /* BarcodeShoppingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252471A175DDD0091816F /* BarcodeShoppingKit.framework */; };
+		42A2526E1A1762EC0091816F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2526D1A1762EC0091816F /* BaseViewController.swift */; };
+		42A252701A17630F0091816F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2526F1A17630F0091816F /* MainViewController.swift */; };
 		4FA05500D3405C772F22AEF0 /* libPods-BarcodeShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */; };
 /* End PBXBuildFile section */
 
@@ -109,7 +110,6 @@
 		42A251F51A175B5F0091816F /* BarcodeShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A251F91A175B5F0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A251FA1A175B5F0091816F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		42A251FC1A175B5F0091816F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42A251FF1A175B5F0091816F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42A252011A175B5F0091816F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42A252041A175B5F0091816F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -129,6 +129,8 @@
 		42A252591A175DDD0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A2525A1A175DDD0091816F /* BarcodeShoppingKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeShoppingKitTests.swift; sourceTree = "<group>"; };
 		42A2526C1A1762130091816F /* BarcodeShopping-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BarcodeShopping-Bridging-Header.h"; sourceTree = "<group>"; };
+		42A2526D1A1762EC0091816F /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		42A2526F1A17630F0091816F /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		B529040CEE875E7350AFD4FA /* Pods-BarcodeShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.release.xcconfig"; sourceTree = "<group>"; };
 		E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarcodeShopping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -208,8 +210,8 @@
 		42A251F71A175B5F0091816F /* BarcodeShopping */ = {
 			isa = PBXGroup;
 			children = (
+				42A252711A1763260091816F /* View Controllers */,
 				42A251FA1A175B5F0091816F /* AppDelegate.swift */,
-				42A251FC1A175B5F0091816F /* ViewController.swift */,
 				42A251FE1A175B5F0091816F /* Main.storyboard */,
 				42A252011A175B5F0091816F /* Images.xcassets */,
 				42A252031A175B5F0091816F /* LaunchScreen.xib */,
@@ -312,6 +314,15 @@
 				42A252591A175DDD0091816F /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		42A252711A1763260091816F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				42A2526D1A1762EC0091816F /* BaseViewController.swift */,
+				42A2526F1A17630F0091816F /* MainViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 		E436BFE377DD58F29916D4E4 /* Pods */ = {
@@ -585,8 +596,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42A251FD1A175B5F0091816F /* ViewController.swift in Sources */,
 				42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */,
+				42A2526E1A1762EC0091816F /* BaseViewController.swift in Sources */,
+				42A252701A17630F0091816F /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

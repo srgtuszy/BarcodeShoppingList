@@ -44,4 +44,13 @@ public class CoreDataManager {
         self.mainContext = mainContext
     }
     
+    public func saveContext() -> Bool {
+        var error: NSError?
+        mainContext.save(&error)
+        if let error = error {
+            println("Failed to save context: \(error.localizedDescription)")
+            return false
+        }
+        return true
+    }
 }

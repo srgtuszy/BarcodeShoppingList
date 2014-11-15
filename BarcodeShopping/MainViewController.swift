@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 iapp. All rights reserved.
 //
 
+import BarcodeShoppingKit
 import Foundation
 import UIKit
 
@@ -25,13 +26,36 @@ class MainViewController : BaseViewController, ZBarReaderDelegate {
         showViewController(reader, sender: self)
     }
     
-    //MARK: UIImagePickerControllerDelegate
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+    //MARK: Internal 
+    func handleScannedBarcode(barcode: String) {
+        let context = coreDataManager.mainContext
+        var item = ShoppingItem.findByBarcode(context, barcode: barcode)
+        if let item = item {
+            item.count++
+            coreDataManager.saveContext()
+        } else {
+            createNewItem(barcode)
+        }
+    }
+    
+    func createNewItem(barcode: String) {
         
     }
     
+    //MARK: UIImagePickerControllerDelegate
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        let results = editingInfo[ZBarReaderControllerResults] as [ZBarSymbol]
+        var symbol: ZBarSymbol?
+        for foundSymbol: ZBarSymbol in results {
+            symbol = foundSymbol
+            break
+        }
+        if let symbol = symbol {
+            handleScannedBarcode(symbol.data)
+        }
+    }
+    
     //MARK: ZBarReaderDelegate
-    func readerControllerDidFailToRead(reader: ZBarReaderController!, withRetry retry: Bool) {
-        
+    func readerControllerDidFailToRead(reader: ZBarReaderController!, withRetry retry: Bool) {        
     }
 }

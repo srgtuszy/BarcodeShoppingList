@@ -7,8 +7,9 @@
 //
 
 import Foundation
-import UIKit
+import BarcodeShoppingKit
 
 class BaseViewController : UIViewController {
+    let coreDataManager = CoreDataManager.sharedManager()
         
 }

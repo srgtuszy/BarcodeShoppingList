@@ -30,7 +30,7 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
     func createFetchedResultsController(context: NSManagedObjectContext) {
         let fetchRequest = NSFetchRequest(entityName: "ShoppingItem")
         var error: NSError?
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "count", ascending: true)]
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
             managedObjectContext: context,
             sectionNameKeyPath: nil,

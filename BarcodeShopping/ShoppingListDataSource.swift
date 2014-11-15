@@ -13,10 +13,12 @@ import UIKit
 public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetchedResultsControllerDelegate {
     public let cellIdentifier = "ShoppingTableViewCell"
     weak var tableView: UITableView!
+    var manager: CoreDataManager!
     var fetchedResultsController : NSFetchedResultsController!
     
     public init(manager: CoreDataManager, tableView: UITableView) {
         super.init()
+        self.manager = manager
         self.tableView = tableView
         createFetchedResultsController(manager.mainContext)
     }
@@ -55,11 +57,24 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
         return sectionInfo.numberOfObjects
     }
     
+    public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true;
+    }
+    
+    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == .Delete) {
+            let item = itemAtIndexPath(indexPath)
+            manager.mainContext.deleteObject(item)
+            manager.saveContext()
+        }
+    }
+    
     public func tableView(tableView: UITableView, cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
         let item = itemAtIndexPath(indexPath)
         cell.textLabel!.text = "\(item.product.name), x\(item.count)"
+        cell.detailTextLabel!.text = item.product.details
         return cell
     }
     

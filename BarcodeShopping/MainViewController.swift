@@ -81,5 +81,5 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
+    }    
 }

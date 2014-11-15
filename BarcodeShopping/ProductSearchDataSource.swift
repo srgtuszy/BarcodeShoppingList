@@ -25,7 +25,7 @@ public class ProductSearchDataSource : NSObject, UITableViewDataSource, NSFetche
     }
     
     //MARK: Public
-    public func search(query: String) {
+    public func search(query: String?) {
         self.query = query
         createFetchedResultsController(manager.mainContext)
     }

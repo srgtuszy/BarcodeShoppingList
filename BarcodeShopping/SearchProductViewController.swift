@@ -24,7 +24,10 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate, UIS
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+        let viewController = segue.destinationViewController as NewProductViewController
+        viewController.completionHandler = {[unowned self] (product: Product) in
+            self.finishWithProduct(product)
+        }
     }
     
     //MARK: IBActions
@@ -32,12 +35,17 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate, UIS
         performSegueWithIdentifier(CreateProductSegueIdentifier, sender: self)
     }
     
-    //MARK: UITableViewDelegate
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let product = dataSource.productAtIndexPath(indexPath)
-        if let completionHandler = completionHandler {
+    //MARK: Internal
+    func finishWithProduct(product: Product) {
+        if let completionHandler = self.completionHandler {
             completionHandler(product: product)
         }
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    //MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        finishWithProduct(dataSource.productAtIndexPath(indexPath))
     }
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -53,6 +61,6 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate, UIS
     
     //MARK: UISearchBarDelegate
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        
+        dataSource.search(searchText)
     }
 }

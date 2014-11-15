@@ -49,6 +49,7 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         if let product = product {
             product.item.count++
             coreDataManager.saveContext()
+            SVProgressHUD.showSuccessWithStatus("Product added!")
         } else {
             self.barcode = barcode
             performSegueWithIdentifier(SearchProductSegueIdentifier, sender: self)
@@ -79,6 +80,6 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

@@ -28,4 +28,13 @@ public class Product: NSManagedObject {
         return results.last
     }
     
+    public class func create(context: NSManagedObjectContext, name: String, details: String?) -> Product {
+        let product = NSEntityDescription.insertNewObjectForEntityForName(name, inManagedObjectContext: context) as Product
+        product.name = name
+        if let details = details {
+            product.details = details
+        }
+        return product
+    }
+    
 }

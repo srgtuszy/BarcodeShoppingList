@@ -12,4 +12,22 @@ import UIKit
 
 class NewProductViewController : BaseTableViewController {
     var completionHandler: ((product: Product) -> Void)?
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var detailField: UITextView!
+    
+    //MARK: IBActions
+    @IBAction func saveProduct() {
+        if let name = nameField.text {
+            let product = Product.create(coreDataManager.mainContext, name: name, details: detailField.text)
+        } else {
+            SVProgressHUD.showErrorWithStatus("Please fill out a name!")
+        }
+    }
+    
+    //MARK: Internal
+    func finish(product: Product) {
+        if let completionHandler = completionHandler {
+            completionHandler(product: product)
+        }
+    }
 }

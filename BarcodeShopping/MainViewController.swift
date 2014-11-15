@@ -15,6 +15,7 @@ let SearchProductSegueIdentifier = "SearchProductSegue"
 class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var dataSource: ShoppingListDataSource!
+    var barcode: String!
     
     //MARK: UIViewController lifecycle
     override func viewDidLoad() {
@@ -27,6 +28,8 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         let viewController = segue.destinationViewController as SearchProductViewController
         viewController.completionHandler = {[unowned self] (product: Product) in
             product.item = ShoppingItem.create(self.coreDataManager.mainContext)
+            product.barcode = self.barcode
+            self.barcode = nil
             self.coreDataManager.saveContext()
         }
     }
@@ -47,6 +50,7 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
             product.item.count++
             coreDataManager.saveContext()
         } else {
+            self.barcode = barcode
             performSegueWithIdentifier(SearchProductSegueIdentifier, sender: self)
         }
     }

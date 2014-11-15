@@ -10,5 +10,6 @@
 #define BarcodeShopping_BarcodeShopping_Bridging_Header_h
 
 #import <ZBarSDK/ZBarSDK.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 #endif

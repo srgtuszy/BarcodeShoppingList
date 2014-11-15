@@ -25,8 +25,8 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate, UIS
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as NewProductViewController
-        viewController.completionHandler = {[unowned self] (product: Product) in
-            self.finishWithProduct(product)
+        viewController.completionHandler = {[weak self] (product: Product) in
+            self!.finishWithProduct(product)
         }
     }
     
@@ -40,7 +40,7 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate, UIS
         if let completionHandler = self.completionHandler {
             completionHandler(product: product)
         }
-        self.navigationController?.popViewControllerAnimated(true)
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     //MARK: UITableViewDelegate

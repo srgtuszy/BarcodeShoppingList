@@ -7,28 +7,28 @@
 //
 
 import UIKit
+import BarcodeShoppingKit
 import NotificationCenter
 
-class TodayViewController: UIViewController, NCWidgetProviding {
-        
+class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate {
+    let coreDataManager = CoreDataManager.sharedManager
+    var dataSource: ShoppingListDataSource!
+    @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view from its nib.
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        tableView.dataSource = dataSource
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+    //MARK: NCWidgetProviding
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
         completionHandler(NCUpdateResult.NewData)
     }
     
+    //MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

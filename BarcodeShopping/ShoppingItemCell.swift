@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 public class ShoppingItemCell : UITableViewCell {
-    @IBOutlet weak var itemImageView: UIImageView!
-    @IBOutlet weak var itemNameLabel: UILabel!
-    @IBOutlet weak var itemCountLabel: UILabel!
-    @IBOutlet weak var itemDetailLabel: UILabel!
+    @IBOutlet public weak var itemImageView: UIImageView!
+    @IBOutlet public weak var itemNameLabel: UILabel!
+    @IBOutlet public weak var itemCountLabel: UILabel!
+    @IBOutlet public weak var itemDetailLabel: UILabel!
 }

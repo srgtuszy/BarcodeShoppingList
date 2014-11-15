@@ -57,11 +57,9 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath
         indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as ShoppingItemCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
         let item = itemAtIndexPath(indexPath)
-        cell.itemNameLabel.text = item.product.name
-        cell.itemDetailLabel.text = item.product.details
-        cell.itemCountLabel.text = "\(item.count)"
+        cell.textLabel!.text = "\(item.product.name), x\(item.count)"
         return cell
     }
     

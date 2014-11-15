@@ -30,6 +30,5 @@ class NewProductViewController : BaseTableViewController {
         if let completionHandler = completionHandler {
             completionHandler(product: product)
         }
-        self.navigationController?.popViewControllerAnimated(true)
     }
 }

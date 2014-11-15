@@ -26,11 +26,11 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let viewController = segue.destinationViewController as SearchProductViewController
-        viewController.completionHandler = {[unowned self] (product: Product) in
-            product.item = ShoppingItem.create(self.coreDataManager.mainContext)
-            product.barcode = self.barcode
-            self.barcode = nil
-            self.coreDataManager.saveContext()
+        viewController.completionHandler = {[weak self] (product: Product) in
+            product.item = ShoppingItem.create(self!.coreDataManager.mainContext)
+            product.barcode = self!.barcode
+            self!.barcode = nil
+            self!.coreDataManager.saveContext()
         }
     }
     

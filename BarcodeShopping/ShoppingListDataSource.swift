@@ -15,7 +15,7 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
     weak var tableView: UITableView!
     var fetchedResultsController : NSFetchedResultsController!
     
-    init(manager: CoreDataManager, tableView: UITableView) {
+    public init(manager: CoreDataManager, tableView: UITableView) {
         super.init()
         self.tableView = tableView
         createFetchedResultsController(manager.mainContext)

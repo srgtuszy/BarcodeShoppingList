@@ -10,12 +10,15 @@ import BarcodeShoppingKit
 import Foundation
 import UIKit
 
-class MainViewController : BaseViewController, ZBarReaderDelegate {
+class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    var dataSource: ShoppingListDataSource!
     
     //MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        tableView.dataSource = dataSource
     }
     
     //MARK: IBActions
@@ -57,5 +60,10 @@ class MainViewController : BaseViewController, ZBarReaderDelegate {
     
     //MARK: ZBarReaderDelegate
     func readerControllerDidFailToRead(reader: ZBarReaderController!, withRetry retry: Bool) {        
+    }
+    
+    //MARK: UITableViewDelegate
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
 }

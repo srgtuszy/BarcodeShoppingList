@@ -32,12 +32,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-Lz-nMl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-Lz-nMl">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="kM1-c0-UfF" id="aot-FS-Txk"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SE5-Lz-nMl" firstAttribute="leading" secondItem="MNh-hP-miS" secondAttribute="leading" id="UUF-dd-kOW"/>
+                            <constraint firstAttribute="trailing" secondItem="SE5-Lz-nMl" secondAttribute="trailing" id="WZl-0L-9jZ"/>
+                            <constraint firstItem="SE5-Lz-nMl" firstAttribute="top" secondItem="MNh-hP-miS" secondAttribute="top" id="e5j-Kk-JLY"/>
+                            <constraint firstItem="cZD-Wo-g1g" firstAttribute="top" secondItem="SE5-Lz-nMl" secondAttribute="bottom" id="ime-9i-YlV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mWk-5a-SiQ">
                         <barButtonItem key="rightBarButtonItem" title="Scan" id="2fB-hg-BH0"/>

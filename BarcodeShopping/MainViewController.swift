@@ -10,6 +10,8 @@ import BarcodeShoppingKit
 import Foundation
 import UIKit
 
+let SearchProductSegueIdentifier = "SearchProductSegue"
+
 class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     var dataSource: ShoppingListDataSource!
@@ -19,6 +21,14 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         super.viewDidLoad()
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
         tableView.dataSource = dataSource
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let viewController = segue.destinationViewController as SearchProductViewController
+        viewController.completionHandler = {[unowned self] (product: Product) in
+            product.item = ShoppingItem.create(self.coreDataManager.mainContext)
+            self.coreDataManager.saveContext()
+        }
     }
     
     //MARK: IBActions
@@ -37,12 +47,8 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
             product.item.count++
             coreDataManager.saveContext()
         } else {
-            createNewItem(barcode)
+            performSegueWithIdentifier(SearchProductSegueIdentifier, sender: self)
         }
-    }
-    
-    func createNewItem(barcode: String) {
-        
     }
     
     //MARK: UIImagePickerControllerDelegate

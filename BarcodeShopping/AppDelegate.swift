@@ -16,12 +16,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         return true
-    }
-    
-    func setupCoreDataStack() {
-        let fileManager = NSFileManager.defaultManager()
-        let documentsURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as NSURL
-        let sqliteURL = NSURL(string: "barcode_shopping.sqlite", relativeToURL: documentsURL)
-        CoreDataManager.createDefaultStack(sqliteURL!)
-    }
+    }    
 }

@@ -49,7 +49,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mWk-5a-SiQ">
-                        <barButtonItem key="rightBarButtonItem" title="Scan" id="2fB-hg-BH0"/>
+                        <barButtonItem key="rightBarButtonItem" title="Scan" id="2fB-hg-BH0">
+                            <connections>
+                                <action selector="scanItem" destination="kM1-c0-UfF" id="pak-6m-Ejv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="SE5-Lz-nMl" id="ZBo-c1-cLr"/>

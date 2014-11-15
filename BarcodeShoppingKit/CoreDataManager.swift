@@ -9,13 +9,21 @@
 import Foundation
 import CoreData
 
-var sharedInstance: CoreDataManager?
-
 public class CoreDataManager {
-    public var mainContext: NSManagedObjectContext
+    public var mainContext: NSManagedObjectContext!
+
+    public class var sharedManager: CoreDataManager {
+        struct Singleton {
+            static let instance = CoreDataManager()
+        }
+        return Singleton.instance
+    }
     
-    public class func createDefaultStack(persistentStoreURL: NSURL) {
-        let modelURL = NSBundle.mainBundle().URLForResource("ShoppingListModel", withExtension: "momd")
+    public init() {
+        let fileManager = NSFileManager.defaultManager()
+        let documentsURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as NSURL
+        let sqliteURL = NSURL(string: "barcode_shopping.sqlite", relativeToURL: documentsURL)
+        let modelURL = NSBundle(forClass: self.dynamicType).URLForResource("ShoppingListModel", withExtension: "momd")
         let model = NSManagedObjectModel(contentsOfURL: modelURL!)
         let storeCoordinator = NSPersistentStoreCoordinator(managedObjectModel: model!)
         let persistentStoreOptions = [
@@ -25,25 +33,17 @@ public class CoreDataManager {
         var error: NSError?
         storeCoordinator.addPersistentStoreWithType(NSSQLiteStoreType,
             configuration: nil,
-            URL: persistentStoreURL,
+            URL: sqliteURL,
             options: persistentStoreOptions,
             error: &error)
         if let error = error {
             fatalError("Could not initialize persistent store: \(error.localizedDescription)")
         }
-        let context = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        context.persistentStoreCoordinator = storeCoordinator
-        sharedInstance = CoreDataManager(mainContext: context)
+        mainContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        mainContext.persistentStoreCoordinator = storeCoordinator
     }
     
-    public class func sharedManager() -> CoreDataManager {
-        return sharedInstance!
-    }
-    
-    init(mainContext: NSManagedObjectContext) {
-        self.mainContext = mainContext
-    }
-    
+    //MARK: Public
     public func saveContext() -> Bool {
         var error: NSError?
         mainContext.save(&error)

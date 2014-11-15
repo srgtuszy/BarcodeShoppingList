@@ -10,6 +10,5 @@ import Foundation
 import BarcodeShoppingKit
 
 class BaseViewController : UIViewController {
-    let coreDataManager = CoreDataManager.sharedManager()
-        
+    lazy var coreDataManager = CoreDataManager.sharedManager
 }

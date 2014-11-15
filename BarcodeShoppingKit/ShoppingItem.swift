@@ -11,20 +11,7 @@ import CoreData
 
 public class ShoppingItem: NSManagedObject {
 
-    @NSManaged public var name: String
-    @NSManaged public var details: String
-    @NSManaged public var barcode: String
-    @NSManaged public var count: Int
-    
-    public class func findByBarcode(context: NSManagedObjectContext, barcode: String) -> ShoppingItem? {
-        let fetchRequest = NSFetchRequest(entityName: "ShoppingItem")
-        fetchRequest.predicate = NSPredicate(format: "barcode == %@", barcode)
-        var error: NSError?
-        let results = context.executeFetchRequest(fetchRequest, error: &error) as [ShoppingItem]
-        if let error = error {
-            println("Failed to find item by barcode: \(error.localizedDescription)")
-            return nil
-        }
-        return results.last
-    }    
+    @NSManaged public var count: Int32
+    @NSManaged public var product: Product
+
 }

@@ -32,9 +32,9 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     //MARK: Internal 
     func handleScannedBarcode(barcode: String) {
         let context = coreDataManager.mainContext
-        var item = ShoppingItem.findByBarcode(context, barcode: barcode)
-        if let item = item {
-            item.count++
+        var product = Product.findByBarcode(context, barcode: barcode)
+        if let product = product {
+            product.item.count++
             coreDataManager.saveContext()
         } else {
             createNewItem(barcode)

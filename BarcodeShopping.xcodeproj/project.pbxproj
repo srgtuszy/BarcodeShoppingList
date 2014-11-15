@@ -28,11 +28,15 @@
 		42A252751A1768320091816F /* ShoppingListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42A252731A1768320091816F /* ShoppingListModel.xcdatamodeld */; };
 		42A252771A1768510091816F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252761A1768510091816F /* CoreDataManager.swift */; };
 		42A252791A1768610091816F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252781A1768610091816F /* CoreData.framework */; };
-		42A2527C1A176F070091816F /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2527B1A176F070091816F /* ShoppingItem.swift */; };
 		42A252831A1779C40091816F /* ShoppingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252811A1779330091816F /* ShoppingItemCell.swift */; };
 		42A252851A1779E40091816F /* ShoppingListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252841A1779E40091816F /* ShoppingListDataSource.swift */; };
 		42A252871A1779FB0091816F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252861A1779FB0091816F /* UIKit.framework */; };
 		42A2528A1A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252891A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift */; };
+		42A2528C1A1796EC0091816F /* ProductLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2528B1A1796EC0091816F /* ProductLoader.swift */; };
+		42A2528F1A179AD00091816F /* NewProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2528E1A179AD00091816F /* NewProductViewController.swift */; };
+		42A252911A179AF40091816F /* SearchProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252901A179AF40091816F /* SearchProductViewController.swift */; };
+		42A252931A179BDB0091816F /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252921A179BDB0091816F /* Product.swift */; };
+		42A252971A179DCC0091816F /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252961A179DCC0091816F /* ShoppingItem.swift */; };
 		4FA05500D3405C772F22AEF0 /* libPods-BarcodeShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */; };
 /* End PBXBuildFile section */
 
@@ -142,11 +146,16 @@
 		42A252741A1768320091816F /* ShoppingListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingListModel.xcdatamodel; sourceTree = "<group>"; };
 		42A252761A1768510091816F /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		42A252781A1768610091816F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		42A2527B1A176F070091816F /* ShoppingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		42A252811A1779330091816F /* ShoppingItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemCell.swift; sourceTree = "<group>"; };
 		42A252841A1779E40091816F /* ShoppingListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListDataSource.swift; sourceTree = "<group>"; };
 		42A252861A1779FB0091816F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		42A252891A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZBarSymbolSet+FastEnumeration.swift"; sourceTree = "<group>"; };
+		42A2528B1A1796EC0091816F /* ProductLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductLoader.swift; sourceTree = "<group>"; };
+		42A2528D1A179A8A0091816F /* ShoppingListModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ShoppingListModel 2.xcdatamodel"; sourceTree = "<group>"; };
+		42A2528E1A179AD00091816F /* NewProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewProductViewController.swift; sourceTree = "<group>"; };
+		42A252901A179AF40091816F /* SearchProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchProductViewController.swift; sourceTree = "<group>"; };
+		42A252921A179BDB0091816F /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		42A252961A179DCC0091816F /* ShoppingItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		B529040CEE875E7350AFD4FA /* Pods-BarcodeShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.release.xcconfig"; sourceTree = "<group>"; };
 		E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarcodeShopping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,6 +319,7 @@
 				42A252801A1779230091816F /* Table View Cells */,
 				42A2527A1A176EA40091816F /* Model */,
 				42A2524B1A175DDD0091816F /* BarcodeShoppingKit.h */,
+				42A2528B1A1796EC0091816F /* ProductLoader.swift */,
 				42A252761A1768510091816F /* CoreDataManager.swift */,
 				42A252731A1768320091816F /* ShoppingListModel.xcdatamodeld */,
 				42A252491A175DDD0091816F /* Supporting Files */,
@@ -347,6 +357,8 @@
 			children = (
 				42A2526D1A1762EC0091816F /* BaseViewController.swift */,
 				42A2526F1A17630F0091816F /* MainViewController.swift */,
+				42A2528E1A179AD00091816F /* NewProductViewController.swift */,
+				42A252901A179AF40091816F /* SearchProductViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -363,7 +375,8 @@
 		42A2527A1A176EA40091816F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				42A2527B1A176F070091816F /* ShoppingItem.swift */,
+				42A252921A179BDB0091816F /* Product.swift */,
+				42A252961A179DCC0091816F /* ShoppingItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -656,9 +669,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42A252911A179AF40091816F /* SearchProductViewController.swift in Sources */,
 				42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */,
 				42A2526E1A1762EC0091816F /* BaseViewController.swift in Sources */,
 				42A252701A17630F0091816F /* MainViewController.swift in Sources */,
+				42A2528F1A179AD00091816F /* NewProductViewController.swift in Sources */,
 				42A2528A1A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,9 +700,11 @@
 			files = (
 				42A252831A1779C40091816F /* ShoppingItemCell.swift in Sources */,
 				42A252851A1779E40091816F /* ShoppingListDataSource.swift in Sources */,
-				42A2527C1A176F070091816F /* ShoppingItem.swift in Sources */,
+				42A2528C1A1796EC0091816F /* ProductLoader.swift in Sources */,
 				42A252771A1768510091816F /* CoreDataManager.swift in Sources */,
+				42A252971A179DCC0091816F /* ShoppingItem.swift in Sources */,
 				42A252751A1768320091816F /* ShoppingListModel.xcdatamodeld in Sources */,
+				42A252931A179BDB0091816F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1052,9 +1069,10 @@
 		42A252731A1768320091816F /* ShoppingListModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				42A2528D1A179A8A0091816F /* ShoppingListModel 2.xcdatamodel */,
 				42A252741A1768320091816F /* ShoppingListModel.xcdatamodel */,
 			);
-			currentVersion = 42A252741A1768320091816F /* ShoppingListModel.xcdatamodel */;
+			currentVersion = 42A2528D1A179A8A0091816F /* ShoppingListModel 2.xcdatamodel */;
 			path = ShoppingListModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

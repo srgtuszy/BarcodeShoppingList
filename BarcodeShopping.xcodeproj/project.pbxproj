@@ -38,7 +38,6 @@
 		42A252971A179DCC0091816F /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252961A179DCC0091816F /* ShoppingItem.swift */; };
 		42A252991A17A0EE0091816F /* ProductSearchDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252981A17A0EE0091816F /* ProductSearchDataSource.swift */; };
 		42A2529B1A17A8AA0091816F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A2529A1A17A8AA0091816F /* BaseTableViewController.swift */; };
-		42A854DF1A17BC2300018E92 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252291A175D0C0091816F /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4FA05500D3405C772F22AEF0 /* libPods-BarcodeShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */; };
 /* End PBXBuildFile section */
 
@@ -49,20 +48,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 42A251F41A175B5F0091816F;
 			remoteInfo = BarcodeShopping;
-		};
-		42A252281A175D0C0091816F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42A252231A175D0C0091816F /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		42A2522A1A175D0C0091816F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42A252231A175D0C0091816F /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = AlamofireTests;
 		};
 		42A2523B1A175D3D0091816F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -92,13 +77,6 @@
 			remoteGlobalIDString = 42A252461A175DDD0091816F;
 			remoteInfo = BarcodeShoppingKit;
 		};
-		42A854E01A17BC2300018E92 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 42A252231A175D0C0091816F /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -120,7 +98,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				42A2525F1A175DDD0091816F /* BarcodeShoppingKit.framework in Embed Frameworks */,
-				42A854DF1A17BC2300018E92 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,7 +115,6 @@
 		42A2520A1A175B5F0091816F /* BarcodeShoppingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeShoppingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A2520F1A175B5F0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A252101A175B5F0091816F /* BarcodeShoppingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeShoppingTests.swift; sourceTree = "<group>"; };
-		42A252231A175D0C0091816F /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		42A252301A175D3D0091816F /* ListExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ListExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A252321A175D3D0091816F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		42A252361A175D3D0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -230,7 +206,6 @@
 				42A252571A175DDD0091816F /* BarcodeShoppingKitTests */,
 				42A252311A175D3D0091816F /* Frameworks */,
 				42A251F61A175B5F0091816F /* Products */,
-				42A252231A175D0C0091816F /* Alamofire.xcodeproj */,
 				E436BFE377DD58F29916D4E4 /* Pods */,
 			);
 			sourceTree = "<group>";
@@ -286,15 +261,6 @@
 				42A2520F1A175B5F0091816F /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		42A252241A175D0C0091816F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				42A252291A175D0C0091816F /* Alamofire.framework */,
-				42A2522B1A175D0C0091816F /* AlamofireTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		42A252311A175D3D0091816F /* Frameworks */ = {
@@ -455,7 +421,6 @@
 			dependencies = (
 				42A2523C1A175D3D0091816F /* PBXTargetDependency */,
 				42A2525D1A175DDD0091816F /* PBXTargetDependency */,
-				42A854E11A17BC2300018E92 /* PBXTargetDependency */,
 			);
 			name = BarcodeShopping;
 			productName = BarcodeShopping;
@@ -585,12 +550,6 @@
 			mainGroup = 42A251EC1A175B5F0091816F;
 			productRefGroup = 42A251F61A175B5F0091816F /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 42A252241A175D0C0091816F /* Products */;
-					ProjectRef = 42A252231A175D0C0091816F /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				42A251F41A175B5F0091816F /* BarcodeShopping */,
@@ -601,23 +560,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		42A252291A175D0C0091816F /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = 42A252281A175D0C0091816F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		42A2522B1A175D0C0091816F /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = 42A2522A1A175D0C0091816F /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		42A251F31A175B5F0091816F /* Resources */ = {
@@ -775,11 +717,6 @@
 			isa = PBXTargetDependency;
 			target = 42A252461A175DDD0091816F /* BarcodeShoppingKit */;
 			targetProxy = 42A2525C1A175DDD0091816F /* PBXContainerItemProxy */;
-		};
-		42A854E11A17BC2300018E92 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = 42A854E01A17BC2300018E92 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

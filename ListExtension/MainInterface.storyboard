@@ -20,8 +20,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="Ozy-fg-Plf"/>
-                                    <constraint firstAttribute="height" constant="148" id="b9X-pR-svR"/>
+                                    <constraint firstAttribute="width" constant="320" id="YBc-ir-ibL"/>
+                                    <constraint firstAttribute="height" constant="148" id="m03-4b-QtR"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" textLabel="nOt-Ui-CEm" detailTextLabel="hdf-9s-B19" style="IBUITableViewCellStyleSubtitle" id="jM4-mP-0xE">
@@ -52,10 +52,8 @@
                             </tableView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="99P-gQ-tEF"/>
-                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Ovy-cs-pKY"/>
-                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Ih4-2c-HJW" secondAttribute="bottom" id="cnK-Q2-Goa"/>
-                            <constraint firstAttribute="trailing" secondItem="Ih4-2c-HJW" secondAttribute="trailing" id="mNv-U2-hJG"/>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="7Yi-vF-gKP"/>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="esa-Hd-fIP"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

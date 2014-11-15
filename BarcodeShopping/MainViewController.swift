@@ -10,7 +10,7 @@ import BarcodeShoppingKit
 import Foundation
 import UIKit
 
-let SearchProductSegueIdentifier = "SearchProductSegue"
+let NewProductSegue = "NewProductSegue"
 
 class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -20,12 +20,12 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     //MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.blackColor())
         tableView.dataSource = dataSource
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let viewController = segue.destinationViewController as SearchProductViewController
+        let viewController = segue.destinationViewController as NewProductViewController
         viewController.completionHandler = {[weak self] (product: Product) in
             product.item = ShoppingItem.create(self!.coreDataManager.mainContext)
             product.barcode = self!.barcode
@@ -47,12 +47,16 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         let context = coreDataManager.mainContext
         var product = Product.findByBarcode(context, barcode: barcode)
         if let product = product {
-            product.item.count++
-            coreDataManager.saveContext()
+            if let item = product.item {
+                item.count++
+                coreDataManager.saveContext()
+            } else {
+                product.item = ShoppingItem.create(self.coreDataManager.mainContext)
+            }
             SVProgressHUD.showSuccessWithStatus("Product added!")
         } else {
             self.barcode = barcode
-            performSegueWithIdentifier(SearchProductSegueIdentifier, sender: self)
+            performSegueWithIdentifier(NewProductSegue, sender: self)
         }
     }
     

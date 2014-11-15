@@ -15,10 +15,13 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
     weak var tableView: UITableView!
     var manager: CoreDataManager!
     var fetchedResultsController : NSFetchedResultsController!
-    public init(manager: CoreDataManager, tableView: UITableView) {
+    var textColor: UIColor!
+    
+    public init(manager: CoreDataManager, tableView: UITableView, textColor: UIColor) {
         super.init()
         self.manager = manager
         self.tableView = tableView
+        self.textColor = textColor
         createFetchedResultsController(manager.mainContext)
     }
     
@@ -27,20 +30,24 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
         return fetchedResultsController.objectAtIndexPath(indexPath) as ShoppingItem
     }
     
-    //MARK: Internal
-    func createFetchedResultsController(context: NSManagedObjectContext) {
-        let fetchRequest = NSFetchRequest(entityName: "ShoppingItem")
+    public func refresh() {
         var error: NSError?
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "count", ascending: true)]
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
-            managedObjectContext: context,
-            sectionNameKeyPath: nil,
-            cacheName: "shopping_item_source_cache")
-        fetchedResultsController.delegate = self
         fetchedResultsController.performFetch(&error)
         if let error = error {
             fatalError("Couldn't perform fetch: \(error.localizedDescription)")
         }
+    }
+    
+    //MARK: Internal
+    func createFetchedResultsController(context: NSManagedObjectContext) {
+        let fetchRequest = NSFetchRequest(entityName: "ShoppingItem")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "count", ascending: true)]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest,
+            managedObjectContext: context,
+            sectionNameKeyPath: nil,
+            cacheName: nil)
+        fetchedResultsController.delegate = self
+        refresh()
     }
     
     //MARK: UITableViewDataSource
@@ -73,7 +80,9 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier) as UITableViewCell
         let item = itemAtIndexPath(indexPath)
         cell.textLabel!.text = "\(item.product.name), x\(item.count)"
+        cell.textLabel!.textColor = textColor
         cell.detailTextLabel!.text = item.product.details
+        cell.detailTextLabel!.textColor = textColor
         return cell
     }
     

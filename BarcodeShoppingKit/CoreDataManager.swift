@@ -40,9 +40,10 @@ public class CoreDataManager {
             fatalError("Could not initialize persistent store: \(error.localizedDescription)")
         }
         mainContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
+        //mainContext.mergePolicy  = NSMergePolicy(mergeType: .MergeByPropertyObjectTrumpMergePolicyType)
         mainContext.persistentStoreCoordinator = storeCoordinator
     }
-    
+        
     //MARK: Public
     public func saveContext() -> Bool {
         var error: NSError?

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import AlamoFire
 
 public class ProductLoader {
     public func loadProductInfo() {

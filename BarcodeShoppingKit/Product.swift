@@ -14,7 +14,7 @@ public class Product: NSManagedObject {
     @NSManaged public var name: String
     @NSManaged public var details: String
     @NSManaged public var barcode: String
-    @NSManaged public var item: ShoppingItem
+    @NSManaged public var item: ShoppingItem?
     
     public class func findByBarcode(context: NSManagedObjectContext, barcode: String) -> Product? {
         let fetchRequest = NSFetchRequest(entityName: "Product")

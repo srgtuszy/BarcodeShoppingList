@@ -17,16 +17,16 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     //MARK: UITableViewDataSource
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
-        println("view did load")
-        tableView.dataSource = dataSource        
+        super.viewDidLoad()
+        self.preferredContentSize = CGSize(width: 320, height: 150)
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.whiteColor())
+        tableView.dataSource = dataSource
     }
     
     override func viewDidAppear(animated: Bool) {
-        println("view did appear")
-        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.whiteColor())
         tableView.dataSource = dataSource
+        tableView.reloadData()
     }
     
     //MARK: NCWidgetProviding

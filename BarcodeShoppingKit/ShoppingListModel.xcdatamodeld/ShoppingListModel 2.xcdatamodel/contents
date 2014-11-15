@@ -11,7 +11,7 @@
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="item" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShoppingItem" positionX="-504" positionY="-0" width="128" height="73"/>
         <element name="Product" positionX="-315" positionY="-0" width="128" height="103"/>
+        <element name="ShoppingItem" positionX="-504" positionY="-0" width="128" height="73"/>
     </elements>
 </model>

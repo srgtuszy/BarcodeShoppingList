@@ -30,5 +30,6 @@ class NewProductViewController : BaseTableViewController {
         if let completionHandler = completionHandler {
             completionHandler(product: product)
         }
+        dismissViewControllerAnimated(true, completion: nil)
     }
 }

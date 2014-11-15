@@ -19,6 +19,7 @@ class NewProductViewController : BaseTableViewController {
     @IBAction func saveProduct() {
         if let name = nameField.text {
             let product = Product.create(coreDataManager.mainContext, name: name, details: detailField.text)
+            finish(product)
         } else {
             SVProgressHUD.showErrorWithStatus("Please fill out a name!")
         }
@@ -29,5 +30,6 @@ class NewProductViewController : BaseTableViewController {
         if let completionHandler = completionHandler {
             completionHandler(product: product)
         }
+        self.navigationController?.popViewControllerAnimated(true)
     }
 }

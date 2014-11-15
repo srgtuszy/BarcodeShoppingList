@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>BarcodeShoppingKit.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>ListExtension.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -28,6 +33,16 @@
 			<true/>
 		</dict>
 		<key>42A2522F1A175D3D0091816F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42A252461A175DDD0091816F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>42A252501A175DDD0091816F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -34,6 +34,20 @@
                ReferencedContainer = "container:BarcodeShopping.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "42A252501A175DDD0091816F"
+               BuildableName = "BarcodeShoppingKitTests.xctest"
+               BlueprintName = "BarcodeShoppingKitTests"
+               ReferencedContainer = "container:BarcodeShopping.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "42A252091A175B5F0091816F"
                BuildableName = "BarcodeShoppingTests.xctest"
                BlueprintName = "BarcodeShoppingTests"
+               ReferencedContainer = "container:BarcodeShopping.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "42A252501A175DDD0091816F"
+               BuildableName = "BarcodeShoppingKitTests.xctest"
+               BlueprintName = "BarcodeShoppingKitTests"
                ReferencedContainer = "container:BarcodeShopping.xcodeproj">
             </BuildableReference>
          </TestableReference>

@@ -169,6 +169,7 @@
 		42A252981A17A0EE0091816F /* ProductSearchDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductSearchDataSource.swift; sourceTree = "<group>"; };
 		42A2529A1A17A8AA0091816F /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		42A854E21A17C8E800018E92 /* BarcodeShopping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BarcodeShopping.entitlements; sourceTree = "<group>"; };
+		42A854E31A17CCC100018E92 /* ListExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = ListExtension.entitlements; sourceTree = "<group>"; };
 		B529040CEE875E7350AFD4FA /* Pods-BarcodeShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.release.xcconfig"; sourceTree = "<group>"; };
 		E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarcodeShopping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -310,6 +311,7 @@
 		42A252341A175D3D0091816F /* ListExtension */ = {
 			isa = PBXGroup;
 			children = (
+				42A854E31A17CCC100018E92 /* ListExtension.entitlements */,
 				42A252371A175D3D0091816F /* TodayViewController.swift */,
 				42A252391A175D3D0091816F /* MainInterface.storyboard */,
 				42A252351A175D3D0091816F /* Supporting Files */,
@@ -556,6 +558,12 @@
 					};
 					42A2522F1A175D3D0091816F = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = ZLX973S597;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					42A252461A175DDD0091816F = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -945,6 +953,9 @@
 		42A2523F1A175D3D0091816F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ListExtension/ListExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -952,6 +963,7 @@
 				INFOPLIST_FILE = ListExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -959,9 +971,13 @@
 		42A252401A175D3D0091816F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = ListExtension/ListExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = ListExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;

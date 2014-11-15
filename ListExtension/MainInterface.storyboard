@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ih4-2c-HJW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ih4-2c-HJW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -51,6 +51,12 @@
                                 </connections>
                             </tableView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="99P-gQ-tEF"/>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="Ovy-cs-pKY"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="Ih4-2c-HJW" secondAttribute="bottom" id="cnK-Q2-Goa"/>
+                            <constraint firstAttribute="trailing" secondItem="Ih4-2c-HJW" secondAttribute="trailing" id="mNv-U2-hJG"/>
+                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <nil key="simulatedStatusBarMetrics"/>

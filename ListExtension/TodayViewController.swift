@@ -19,10 +19,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()        
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        println("view did load")
         tableView.dataSource = dataSource        
     }
     
     override func viewDidAppear(animated: Bool) {
+        println("view did appear")
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
         tableView.dataSource = dataSource
     }

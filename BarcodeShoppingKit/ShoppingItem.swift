@@ -26,5 +26,5 @@ public class ShoppingItem: NSManagedObject {
             return nil
         }
         return results.last
-    }
+    }    
 }

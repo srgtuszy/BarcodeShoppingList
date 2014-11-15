@@ -32,6 +32,7 @@
 		42A252831A1779C40091816F /* ShoppingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252811A1779330091816F /* ShoppingItemCell.swift */; };
 		42A252851A1779E40091816F /* ShoppingListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252841A1779E40091816F /* ShoppingListDataSource.swift */; };
 		42A252871A1779FB0091816F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42A252861A1779FB0091816F /* UIKit.framework */; };
+		42A2528A1A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A252891A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift */; };
 		4FA05500D3405C772F22AEF0 /* libPods-BarcodeShopping.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		42A252811A1779330091816F /* ShoppingItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingItemCell.swift; sourceTree = "<group>"; };
 		42A252841A1779E40091816F /* ShoppingListDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoppingListDataSource.swift; sourceTree = "<group>"; };
 		42A252861A1779FB0091816F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		42A252891A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ZBarSymbolSet+FastEnumeration.swift"; sourceTree = "<group>"; };
 		B529040CEE875E7350AFD4FA /* Pods-BarcodeShopping.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.release.xcconfig"; sourceTree = "<group>"; };
 		E57D4AAD04F557C404A6DA15 /* libPods-BarcodeShopping.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarcodeShopping.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -226,6 +228,7 @@
 		42A251F71A175B5F0091816F /* BarcodeShopping */ = {
 			isa = PBXGroup;
 			children = (
+				42A252881A1794D00091816F /* Extensions */,
 				42A252711A1763260091816F /* View Controllers */,
 				42A251FA1A175B5F0091816F /* AppDelegate.swift */,
 				42A251FE1A175B5F0091816F /* Main.storyboard */,
@@ -372,6 +375,14 @@
 			);
 			name = "Table View Cells";
 			path = ../BarcodeShopping;
+			sourceTree = "<group>";
+		};
+		42A252881A1794D00091816F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				42A252891A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 		E436BFE377DD58F29916D4E4 /* Pods */ = {
@@ -648,6 +659,7 @@
 				42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */,
 				42A2526E1A1762EC0091816F /* BaseViewController.swift in Sources */,
 				42A252701A17630F0091816F /* MainViewController.swift in Sources */,
+				42A2528A1A1794F90091816F /* ZBarSymbolSet+FastEnumeration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,7 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         let reader = ZBarReaderViewController()
         reader.readerDelegate = self
         reader.scanner.setSymbology(ZBAR_I25, config: ZBAR_CFG_ENABLE, to: 0)
-        showViewController(reader, sender: self)
+        presentViewController(reader, animated: true, completion: nil)
     }
     
     //MARK: Internal 
@@ -46,16 +46,21 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     }
     
     //MARK: UIImagePickerControllerDelegate
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-        let results = editingInfo[ZBarReaderControllerResults] as [ZBarSymbol]
-        var symbol: ZBarSymbol?
-        for foundSymbol: ZBarSymbol in results {
-            symbol = foundSymbol
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+        dismissViewControllerAnimated(true, completion: nil)
+        let results = info[ZBarReaderControllerResults] as NSFastEnumeration
+        var foundSymbol: ZBarSymbol?
+        for symbol in results as ZBarSymbolSet {
+            foundSymbol = symbol as? ZBarSymbol
             break
         }
-        if let symbol = symbol {
-            handleScannedBarcode(symbol.data)
+        if let foundSymbol = foundSymbol {
+            handleScannedBarcode(foundSymbol.data)
         }
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: ZBarReaderDelegate

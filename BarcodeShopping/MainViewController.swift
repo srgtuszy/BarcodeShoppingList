@@ -14,6 +14,7 @@ let NewProductSegue = "NewProductSegue"
 
 class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
+    let productLoader = ProductLoader()
     var dataSource: ShoppingListDataSource!
     var barcode: String!
     

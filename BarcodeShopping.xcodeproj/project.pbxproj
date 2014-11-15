@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424155831A17DF1600A4D9A4 /* ProductMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424155821A17DF1600A4D9A4 /* ProductMetaData.swift */; };
 		42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A251FA1A175B5F0091816F /* AppDelegate.swift */; };
 		42A252001A175B5F0091816F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A251FE1A175B5F0091816F /* Main.storyboard */; };
 		42A252021A175B5F0091816F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A252011A175B5F0091816F /* Images.xcassets */; };
@@ -106,6 +107,7 @@
 
 /* Begin PBXFileReference section */
 		116A4088D4B99585544DB9AB /* Pods-BarcodeShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.debug.xcconfig"; sourceTree = "<group>"; };
+		424155821A17DF1600A4D9A4 /* ProductMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMetaData.swift; sourceTree = "<group>"; };
 		42A251F51A175B5F0091816F /* BarcodeShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A251F91A175B5F0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A251FA1A175B5F0091816F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -301,6 +303,7 @@
 				42A2527A1A176EA40091816F /* Model */,
 				42A2524B1A175DDD0091816F /* BarcodeShoppingKit.h */,
 				42A2528B1A1796EC0091816F /* ProductLoader.swift */,
+				424155821A17DF1600A4D9A4 /* ProductMetaData.swift */,
 				42A252761A1768510091816F /* CoreDataManager.swift */,
 				42A252731A1768320091816F /* ShoppingListModel.xcdatamodeld */,
 				42A252491A175DDD0091816F /* Supporting Files */,
@@ -678,6 +681,7 @@
 				42A252771A1768510091816F /* CoreDataManager.swift in Sources */,
 				42A252971A179DCC0091816F /* ShoppingItem.swift in Sources */,
 				42A252751A1768320091816F /* ShoppingListModel.xcdatamodeld in Sources */,
+				424155831A17DF1600A4D9A4 /* ProductMetaData.swift in Sources */,
 				42A252931A179BDB0091816F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

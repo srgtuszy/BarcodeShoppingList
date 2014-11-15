@@ -12,7 +12,7 @@ import UIKit
 
 let CreateProductSegueIdentifier = "CreateProductSegue"
 
-class SearchProductViewController : BaseViewController, UITableViewDelegate {
+class SearchProductViewController : BaseViewController, UITableViewDelegate, UISearchBarDelegate {
     var completionHandler: ((product: Product) -> Void)?
     var dataSource: ProductSearchDataSource!
     @IBOutlet weak var tableView: UITableView!
@@ -38,5 +38,21 @@ class SearchProductViewController : BaseViewController, UITableViewDelegate {
         if let completionHandler = completionHandler {
             completionHandler(product: product)
         }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50.0
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Type product name"
+        searchBar.delegate = self
+        return searchBar
+    }
+    
+    //MARK: UISearchBarDelegate
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        
     }
 }

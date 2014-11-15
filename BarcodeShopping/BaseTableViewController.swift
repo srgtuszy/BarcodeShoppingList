@@ -1,5 +1,5 @@
 //
-//  NewProductViewController.swift
+//  BaseTableViewController.swift
 //  BarcodeShopping
 //
 //  Created by Michał Tuszyński on 15/11/14.
@@ -8,8 +8,7 @@
 
 import BarcodeShoppingKit
 import Foundation
-import UIKit
 
-class NewProductViewController : BaseTableViewController {
-    var completionHandler: ((product: Product) -> Void)?
+class BaseTableViewController : UITableViewController {
+    lazy var coreDataManager = CoreDataManager.sharedManager
 }

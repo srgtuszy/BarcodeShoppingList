@@ -21,7 +21,7 @@ public class CoreDataManager {
     
     public init() {
         let fileManager = NSFileManager.defaultManager()
-        let documentsURL = fileManager.URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last as NSURL
+        let documentsURL = fileManager.containerURLForSecurityApplicationGroupIdentifier("group.barcodeDb")
         let sqliteURL = NSURL(string: "barcode_shopping.sqlite", relativeToURL: documentsURL)
         let modelURL = NSBundle(forClass: self.dynamicType).URLForResource("ShoppingListModel", withExtension: "momd")
         let model = NSManagedObjectModel(contentsOfURL: modelURL!)

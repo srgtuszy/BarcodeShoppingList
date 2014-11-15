@@ -15,7 +15,6 @@ public class ShoppingListDataSource : NSObject, UITableViewDataSource, NSFetched
     weak var tableView: UITableView!
     var manager: CoreDataManager!
     var fetchedResultsController : NSFetchedResultsController!
-    
     public init(manager: CoreDataManager, tableView: UITableView) {
         super.init()
         self.manager = manager

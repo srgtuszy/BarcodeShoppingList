@@ -17,7 +17,12 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     
     //MARK: UITableViewDataSource
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad()        
+        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
+        tableView.dataSource = dataSource        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView)
         tableView.dataSource = dataSource
     }

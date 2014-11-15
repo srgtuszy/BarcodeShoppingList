@@ -10,5 +10,5 @@ import Foundation
 
 public struct ProductMetaData {
     public var name: String
-    public var details: String
+    public var details: String?
 }

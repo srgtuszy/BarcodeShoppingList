@@ -11,22 +11,25 @@ import BarcodeShoppingKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDelegate {
-    let coreDataManager = CoreDataManager.sharedManager
+    var coreDataManager: CoreDataManager!
     var dataSource: ShoppingListDataSource!
+    
     @IBOutlet weak var tableView: UITableView!
     
     //MARK: UITableViewDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = CGSize(width: 320, height: 150)
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        coreDataManager = CoreDataManager()
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.whiteColor())
         tableView.dataSource = dataSource
+        tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
     
-    override func viewDidAppear(animated: Bool) {
-        dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.whiteColor())
-        tableView.dataSource = dataSource
-        tableView.reloadData()
+    override func viewDidDisappear(animated: Bool) {
     }
     
     //MARK: NCWidgetProviding

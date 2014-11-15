@@ -50,15 +50,32 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
         if let product = product {
             if let item = product.item {
                 item.count++
-                coreDataManager.saveContext()
             } else {
                 product.item = ShoppingItem.create(self.coreDataManager.mainContext)
             }
+            coreDataManager.saveContext()
             SVProgressHUD.showSuccessWithStatus("Product added!")
         } else {
-            self.barcode = barcode
-            performSegueWithIdentifier(NewProductSegue, sender: self)
+            pullProductInfoFromWeb(barcode)
         }
+    }
+    
+    func pullProductInfoFromWeb(barcode: String) {
+        SVProgressHUD.showWithStatus("Loading product data...")
+        productLoader.loadProductInfo(barcode,
+            completionHandler: {[weak self](metadata: ProductMetaData!, error: NSError!) in
+                SVProgressHUD.dismiss()
+                if (metadata != nil) {
+                    let context = self!.coreDataManager.mainContext
+                    let product = Product.fromMetaData(context, metadata: metadata)
+                    product.barcode = barcode
+                    product.item = ShoppingItem.create(context)
+                    self!.coreDataManager.saveContext()
+                    return
+                }
+                self!.barcode = barcode
+                self!.performSegueWithIdentifier(NewProductSegue, sender: self)
+        })
     }
     
     //MARK: UIImagePickerControllerDelegate

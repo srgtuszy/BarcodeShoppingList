@@ -47,8 +47,10 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYw-5W-ImA">
-                                <rect key="frame" x="0.0" y="113" width="320" height="35"/>
+                                <rect key="frame" x="57" y="113" width="259" height="35"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="259" id="Q0j-vl-M9s"/>
                                     <constraint firstAttribute="height" constant="35" id="lSu-Vp-MTX"/>
                                 </constraints>
                                 <state key="normal" title="Tap to scan">
@@ -60,13 +62,12 @@
                             </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="SYw-5W-ImA" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="NVG-LX-n86"/>
                             <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Uxp-V7-KR7"/>
                             <constraint firstItem="SYw-5W-ImA" firstAttribute="top" secondItem="Ih4-2c-HJW" secondAttribute="bottom" constant="8" id="Xui-K4-ZpU"/>
+                            <constraint firstAttribute="trailing" secondItem="SYw-5W-ImA" secondAttribute="trailing" constant="4" id="crY-6v-xig"/>
                             <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="e1Q-dF-Zxh"/>
                             <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="SYw-5W-ImA" secondAttribute="bottom" id="m3q-7S-nJT"/>
                             <constraint firstAttribute="trailing" secondItem="Ih4-2c-HJW" secondAttribute="trailing" id="poh-Yz-6UJ"/>
-                            <constraint firstAttribute="trailing" secondItem="SYw-5W-ImA" secondAttribute="trailing" id="z2Q-Sn-DpJ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>

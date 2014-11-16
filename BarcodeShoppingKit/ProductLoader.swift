@@ -8,13 +8,11 @@
 
 import Foundation
 
-public class ProductLoader {
+public class ProductLoader : NetworkLoader {
     let apiKey = "a3a6326543235dafaa87a106a554769d"
-    var session: NSURLSession
     
-    public init() {
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        session = NSURLSession(configuration: config)
+    public override init() {
+        super.init()
     }
     
     public func loadProductInfo(barcode: String,

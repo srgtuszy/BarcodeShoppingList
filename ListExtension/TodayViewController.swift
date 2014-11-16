@@ -15,8 +15,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     var dataSource: ShoppingListDataSource!
     
     @IBOutlet weak var tableView: UITableView!
-    
-    //MARK: UITableViewDataSource
+
+    //MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = CGSize(width: 320, height: 150)
@@ -29,7 +29,9 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
         tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: .Automatic)
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    //MARK: IBActions
+    @IBAction func didTapScanButton() {
+        extensionContext?.openURL(NSURL(string: "barcodeshopping://scan")!, completionHandler: nil)
     }
     
     //MARK: NCWidgetProviding
@@ -40,5 +42,6 @@ class TodayViewController: UIViewController, NCWidgetProviding, UITableViewDeleg
     //MARK: UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        extensionContext?.openURL(NSURL(string: "barcodeshopping://view")!, completionHandler: nil)
     }
 }

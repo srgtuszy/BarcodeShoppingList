@@ -12,6 +12,7 @@ import UIKit
 
 let NewProductSegue = "NewProductSegue"
 
+@objc
 class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let productLoader = ProductLoader()
@@ -21,6 +22,11 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     //MARK: UIViewController lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let observer = NSNotificationCenter.defaultCenter().addObserverForName("ScanWidgetTapped", object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: {
+            (notification: NSNotification!) in
+            self.scanItem()
+        })
+        
         dataSource = ShoppingListDataSource(manager: coreDataManager, tableView: tableView, textColor: UIColor.blackColor())
         tableView.dataSource = dataSource
     }
@@ -44,6 +50,10 @@ class MainViewController : BaseViewController, ZBarReaderDelegate, UITableViewDe
     }
     
     //MARK: Internal 
+    func handleScanNotification(notification: NSNotification) {
+        scanItem()
+    }
+    
     func handleScannedBarcode(barcode: String) {
         let context = coreDataManager.mainContext
         var product = Product.findByBarcode(context, barcode: barcode)

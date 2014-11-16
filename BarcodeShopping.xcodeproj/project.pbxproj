@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		424155831A17DF1600A4D9A4 /* ProductMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424155821A17DF1600A4D9A4 /* ProductMetaData.swift */; };
 		424155851A17EA9C00A4D9A4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 424155841A17EA9C00A4D9A4 /* CoreLocation.framework */; };
+		424155871A17F70D00A4D9A4 /* PlaceLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424155861A17F70D00A4D9A4 /* PlaceLoader.swift */; };
+		424155891A17F79000A4D9A4 /* NetworkLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424155881A17F79000A4D9A4 /* NetworkLoader.swift */; };
+		4241558B1A17F82400A4D9A4 /* PlaceMetaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4241558A1A17F82400A4D9A4 /* PlaceMetaData.swift */; };
 		42A251FB1A175B5F0091816F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42A251FA1A175B5F0091816F /* AppDelegate.swift */; };
 		42A252001A175B5F0091816F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42A251FE1A175B5F0091816F /* Main.storyboard */; };
 		42A252021A175B5F0091816F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42A252011A175B5F0091816F /* Images.xcassets */; };
@@ -110,6 +113,9 @@
 		116A4088D4B99585544DB9AB /* Pods-BarcodeShopping.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarcodeShopping.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarcodeShopping/Pods-BarcodeShopping.debug.xcconfig"; sourceTree = "<group>"; };
 		424155821A17DF1600A4D9A4 /* ProductMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductMetaData.swift; sourceTree = "<group>"; };
 		424155841A17EA9C00A4D9A4 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		424155861A17F70D00A4D9A4 /* PlaceLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceLoader.swift; sourceTree = "<group>"; };
+		424155881A17F79000A4D9A4 /* NetworkLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLoader.swift; sourceTree = "<group>"; };
+		4241558A1A17F82400A4D9A4 /* PlaceMetaData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceMetaData.swift; sourceTree = "<group>"; };
 		42A251F51A175B5F0091816F /* BarcodeShopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BarcodeShopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42A251F91A175B5F0091816F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42A251FA1A175B5F0091816F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,11 +312,14 @@
 				42A252801A1779230091816F /* Table View Cells */,
 				42A2527A1A176EA40091816F /* Model */,
 				42A2524B1A175DDD0091816F /* BarcodeShoppingKit.h */,
+				424155881A17F79000A4D9A4 /* NetworkLoader.swift */,
 				42A2528B1A1796EC0091816F /* ProductLoader.swift */,
 				424155821A17DF1600A4D9A4 /* ProductMetaData.swift */,
+				424155861A17F70D00A4D9A4 /* PlaceLoader.swift */,
 				42A252761A1768510091816F /* CoreDataManager.swift */,
 				42A252731A1768320091816F /* ShoppingListModel.xcdatamodeld */,
 				42A252491A175DDD0091816F /* Supporting Files */,
+				4241558A1A17F82400A4D9A4 /* PlaceMetaData.swift */,
 			);
 			path = BarcodeShoppingKit;
 			sourceTree = "<group>";
@@ -522,6 +531,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 						};
 					};
 					42A252091A175B5F0091816F = {
@@ -678,14 +690,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4241558B1A17F82400A4D9A4 /* PlaceMetaData.swift in Sources */,
 				42A252831A1779C40091816F /* ShoppingItemCell.swift in Sources */,
 				42A252851A1779E40091816F /* ShoppingListDataSource.swift in Sources */,
+				424155871A17F70D00A4D9A4 /* PlaceLoader.swift in Sources */,
 				42A252991A17A0EE0091816F /* ProductSearchDataSource.swift in Sources */,
 				42A2528C1A1796EC0091816F /* ProductLoader.swift in Sources */,
 				42A252771A1768510091816F /* CoreDataManager.swift in Sources */,
 				42A252971A179DCC0091816F /* ShoppingItem.swift in Sources */,
 				42A252751A1768320091816F /* ShoppingListModel.xcdatamodeld in Sources */,
 				424155831A17DF1600A4D9A4 /* ProductMetaData.swift in Sources */,
+				424155891A17F79000A4D9A4 /* NetworkLoader.swift in Sources */,
 				42A252931A179BDB0091816F /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

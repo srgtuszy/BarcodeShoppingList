@@ -17,12 +17,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ih4-2c-HJW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="148"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="105"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="YBc-ir-ibL"/>
-                                    <constraint firstAttribute="height" constant="148" id="m03-4b-QtR"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" textLabel="nOt-Ui-CEm" detailTextLabel="hdf-9s-B19" style="IBUITableViewCellStyleSubtitle" id="jM4-mP-0xE">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -50,10 +46,27 @@
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="ZCo-w5-kNY"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SYw-5W-ImA">
+                                <rect key="frame" x="0.0" y="113" width="320" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="lSu-Vp-MTX"/>
+                                </constraints>
+                                <state key="normal" title="Tap to scan">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapScanButton" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="tn3-3r-bgt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="7Yi-vF-gKP"/>
-                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="esa-Hd-fIP"/>
+                            <constraint firstItem="SYw-5W-ImA" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="NVG-LX-n86"/>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" id="Uxp-V7-KR7"/>
+                            <constraint firstItem="SYw-5W-ImA" firstAttribute="top" secondItem="Ih4-2c-HJW" secondAttribute="bottom" constant="8" id="Xui-K4-ZpU"/>
+                            <constraint firstItem="Ih4-2c-HJW" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="e1Q-dF-Zxh"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="SYw-5W-ImA" secondAttribute="bottom" id="m3q-7S-nJT"/>
+                            <constraint firstAttribute="trailing" secondItem="Ih4-2c-HJW" secondAttribute="trailing" id="poh-Yz-6UJ"/>
+                            <constraint firstAttribute="trailing" secondItem="SYw-5W-ImA" secondAttribute="trailing" id="z2Q-Sn-DpJ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
